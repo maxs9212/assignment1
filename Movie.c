@@ -251,8 +251,9 @@ void rateMovie(int userID,char userRating[]){
         scanf("%f",&rating);
     }
     editMatrix(userNum,movieNum,*matrix,userID-1,index-1,rating);
+    arr_print(userNum,movieNum,*matrix);
     //matrix[userID-1][index-1]=(float)rating;
-    printf("%f\n",matrix[userID-1][index-1]);
+    printf("%f\n",rating);
     //int userNum = 0;
     //int movieNum = 0;
     
@@ -264,9 +265,11 @@ void rateMovie(int userID,char userRating[]){
     fscanf(edit,"%d%d",&userNum,&movieNum);
     rewind(edit);
     fprintf(edit,"%d %d\n",userNum,movieNum);
+    //float temp=0;
     for(int i=0;i<userNum;i++){
         for(int j=0;j<movieNum;j++){
-            fprintf(edit,"%0.1f ",matrix[i][j]);
+            //temp=matrix[i][j];
+            fprintf(edit,"%0.1f ",&matrix[i][j]);
         }
         fprintf(edit,"\n");
     }    
